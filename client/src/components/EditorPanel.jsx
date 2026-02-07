@@ -68,14 +68,7 @@ export default function EditorPanel() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [prompt, setPrompt] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const defaultProblemStatement = `Smart India Hackathon 2025: Develop a unified citizen service portal that aggregates schemes, eligibility checks, and application tracking across central and state departments. The solution should
-- provide multilingual support for at least three Indian languages,
-- leverage AI to recommend relevant schemes based on user profiles,
-- ensure accessibility for low-bandwidth regions, and
-- offer secure integrations for departmental data exchange via open APIs.`;
-  const [problemStatement, setProblemStatement] = useState(
-    defaultProblemStatement,
-  );
+  const [problemStatement, setProblemStatement] = useState("");
 
   // --- Complete language mapping from Judge0 IDs to Monaco ---
   const monacoLang = useMemo(() => getMonacoLanguage(languageId), [languageId]);
@@ -1076,21 +1069,7 @@ export default function EditorPanel() {
         </Panel>
         <PanelResizeHandle className="h-2 my-2 rounded bg-white/5 transition-colors hover:bg-white/10" />
         <Panel defaultSize={35} minSize={15} className="flex">
-          <div className="flex-1 rounded-xl border border-white/10 bg-gray-900/60 shadow-lg">
-            <div className="border-b border-white/10 px-4 py-3">
-              <h2 className="text-sm font-semibold uppercase tracking-wide text-cyan-200">
-                Problem Statement
-              </h2>
-            </div>
-            <div className="p-4">
-              <textarea
-                value={problemStatement}
-                onChange={(e) => setProblemStatement(e.target.value)}
-                placeholder="Document the challenge, constraints, and expected behavior here..."
-                className="h-28 w-full resize-none rounded-lg border border-cyan-500/20 bg-gray-800/80 p-3 font-mono text-sm text-cyan-100 placeholder:text-cyan-100/40 outline-none focus:border-cyan-400/40 focus:ring-1 focus:ring-cyan-400/20 transition-all duration-200"
-              />
-            </div>
-          </div>
+          {/* Problem Statement section removed as requested */}
         </Panel>
       </PanelGroup>
 

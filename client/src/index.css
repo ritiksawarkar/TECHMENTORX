@@ -5,28 +5,40 @@
 
 /* Glowing Aura effect */
 .glow-effect {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(99, 102, 241, 0.4);
+  box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.6),
+    0 0 30px rgba(99, 102, 241, 0.4);
 }
 
 /* Input field */
-textarea {
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 12px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  padding: 12px;
-  color: white;
-  font-size: 16px;
-  font-family: 'JetBrains Mono', monospace;
+textarea,
+input[type="text"],
+input[type="search"] {
+  background: #181825;
+  border-radius: 6px;
+  border: 1px solid #232334;
+  padding: 10px;
+  color: #e5e7eb;
+  font-size: 15px;
+  font-family: "JetBrains Mono", "Inter", monospace;
+  transition: border 0.2s;
+  textarea:focus,
+  input[type="text"]:focus,
+  input[type="search"]:focus {
+    border: 1.5px solid #60a5fa;
+    outline: none;
+  }
 }
 
 /* Button hover effects */
 button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #232334;
+  color: #60a5fa;
 }
 
 /* Modal container adjustments */
 .bg-gradient-to-r {
-  background: linear-gradient(to right, #6c5ce7, #8e44ad);
+  background: #181825;
 }
 
 /* CRITICAL: Prevent ALL layout shifts - Universal fix */
@@ -35,7 +47,8 @@ button:hover {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
   overflow-y: scroll;
@@ -47,19 +60,24 @@ html, body {
 }
 
 #root {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  min-width: 100vw;
   overflow: hidden;
+  background: #101014;
 }
 
 /* Prevent horizontal scrolling completely */
-body, html {
+body,
+html {
   max-width: 100vw;
   overflow-x: hidden;
 }
 
 /* CRITICAL: Force stable scrollbar for all scrollable divs */
-div[class*="overflow-y"], div[class*="overflow-"] {
+div[class*="overflow-y"],
+div[class*="overflow-"] {
   scrollbar-gutter: stable;
 }
 
@@ -114,4 +132,3 @@ div[class*="overflow-y"], div[class*="overflow-"] {
   min-width: 0;
   width: 100%;
 }
-
